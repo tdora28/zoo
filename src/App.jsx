@@ -7,10 +7,10 @@ import { animals } from './animalList.js';
 // console.log(animals);
 
 function App() {
-  const [zoo, setZoo] = useState(animals);
+  const [zooAnimals, setZooAnimals] = useState(animals);
 
   const modifyLikes = (name, operation) => {
-    const updateZoo = zoo.map((item) => {
+    const updateZooAnimals = zooAnimals.map((item) => {
       if (item.name === name && operation === 'increase') {
         item.likes++;
       }
@@ -19,14 +19,14 @@ function App() {
       }
       return item;
     });
-    setZoo(updateZoo);
+    setZooAnimals(updateZooAnimals);
   };
 
   return (
     <>
       <Header />
       <div className="cards">
-        {zoo.map((item) => {
+        {zooAnimals.map((item) => {
           return <Card key={item.name} {...item} decreaseLikes={() => modifyLikes(item.name, 'decrease')} increaseLikes={() => modifyLikes(item.name, 'increase')} />;
         })}
       </div>
