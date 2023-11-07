@@ -146,7 +146,7 @@ export const birds = [
   { name: 'Osprey', likes: 0 },
   { name: 'Eagle', likes: 0 },
   { name: 'Killdeer', likes: 0 },
-  { name: 'Goldfinch', likes: 0 },
+  { name: 'Stork', likes: 0 },
   { name: 'Magpie', likes: 0 },
   { name: 'Collared Dove', likes: 0 },
   { name: 'Blue Tit', likes: 0 },

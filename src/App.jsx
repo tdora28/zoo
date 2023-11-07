@@ -2,12 +2,13 @@ import { useState } from 'react';
 import Header from './Header.jsx';
 import Card from './Card.jsx';
 import Footer from './Footer.jsx';
-import { animals } from './animalList.js';
+// import { animals } from './animalList.js';
+import { birds } from './animalList.js';
 
 // console.log(animals);
 
 function App() {
-  const [zoo, setZoo] = useState(animals);
+  const [zoo, setZoo] = useState(birds);
 
   const removeCard = (name) => {
     const updateZoo = zoo.filter((item) => {
