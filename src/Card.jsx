@@ -1,11 +1,11 @@
-const Card = ({ name, likes, decreaseLikes, increaseLikes }) => {
+const Card = ({ name, likes, decreaseLikes, increaseLikes, removeCard }) => {
   return (
     <div className="card">
-      <button className="card__close">
+      <button className="card__close" onClick={removeCard}>
         <span className="material-symbols-outlined">close</span>
       </button>
       <div className="card__img">
-        <img src={`https://source.unsplash.com/400x400/?${name.toLowerCase()}`} alt="unsplash random image" />
+        <img src={`https://source.unsplash.com/400x400/?${name}`} alt="unsplash random image" />
       </div>
       <div className="card__content">
         <h2 className="card__title">{name}</h2>
