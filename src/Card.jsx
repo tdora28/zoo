@@ -1,4 +1,4 @@
-const Card = ({ name, likes }) => {
+const Card = ({ name, likes, decreaseLikes, increaseLikes }) => {
   return (
     <div className="card">
       <button className="card__close">
@@ -10,13 +10,13 @@ const Card = ({ name, likes }) => {
       <div className="card__content">
         <h2 className="card__title">{name}</h2>
         <div className="card__rating">
-          <button>
+          <button onClick={decreaseLikes}>
             <span className="material-symbols-outlined">remove</span>
           </button>
           <p>
             <span className="material-symbols-outlined">{likes >= 0 ? 'favorite' : 'heart_broken'}</span> <span>{likes}</span>
           </p>
-          <button>
+          <button onClick={increaseLikes}>
             <span className="material-symbols-outlined">add</span>
           </button>
         </div>
