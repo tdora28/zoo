@@ -1,3 +1,8 @@
+:root {
+  --clr-white: #fff;
+  --clr-dark: #333;
+}
+
 /* BASIC STYLES */
 * {
   margin: 0;
@@ -8,7 +13,18 @@
 body {
   font-family: 'Inter', sans-serif;
   font-weight: normal;
-  color: #333;
+  color: var(--clr-dark);
+
+  /* From https://css-pattern.com/ */
+  --s: 220px;
+  --c1: #4a5770;
+  --c2: #1d1d1d;
+
+  --_g: radial-gradient(#0000 60%, var(--c1) 61% 63%, #0000 64% 77%, var(--c1) 78% 80%, #0000 81%);
+  --_c: , #0000 75%, var(--c2) 0;
+  background: conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * 0.44) calc(0.9 * var(--s)), conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * -0.06) calc(0.4 * var(--s)),
+    conic-gradient(at 20% 12% var(--_c)) calc(0.9 * var(--s)) calc(var(--s) * 0.44), conic-gradient(at 20% 12% var(--_c)) calc(0.4 * var(--s)) calc(var(--s) * -0.06), var(--_g), var(--_g) calc(var(--s) / 2) calc(var(--s) / 2) var(--c2);
+  background-size: var(--s) var(--s);
 }
 
 button {
@@ -35,8 +51,8 @@ footer {
   align-items: center;
   height: 4rem;
   padding: 1rem;
-  background: #333;
-  color: #fff;
+  background: var(--clr-dark);
+  color: var(--clr-white);
 }
 
 /* CARDS */
@@ -50,6 +66,8 @@ footer {
 .card {
   position: relative;
   width: 200px;
+  background: var(--clr-white);
+  box-shadow: 0 0 0 0.2rem var(--clr-white);
 }
 .card__close {
   position: absolute;
@@ -59,8 +77,16 @@ footer {
   height: 1.8rem;
   border: none;
   border-radius: 50%;
-  background: #fff;
+  background: var(--clr-white);
   transition: all 0.2s linear;
+}
+.card__close:hover {
+  background: var(--clr-dark);
+  color: var(--clr-white);
+}
+.card__close:active {
+  background: var(--clr-white);
+  color: var(--clr-dark);
 }
 .card__img {
   height: 200px;
@@ -79,40 +105,35 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.8rem;
-  border: 1px solid #333;
-  border-top: none;
+  padding: 1.2rem 0.8rem;
 }
 .card__title {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+  color: #2b3e60;
   text-transform: capitalize;
 }
 .card__rating {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  border-radius: 20px;
+  background: #eee;
 }
-.card__rating p {
+.card__rating-score {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: var(--clr-white);
+  font-weight: bold;
 }
-.card__rating p .material-symbols-outlined {
+.card__rating-score .material-symbols-outlined {
   color: #ff6347;
 }
-.card__rating button {
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 1px solid #333;
-  border-radius: 2px;
+.card__rating-btn {
+  border: none;
+  background: none;
   transition: all 0.2s linear;
-}
-.card__close:hover,
-.card__rating button:hover {
-  background: #333;
-  color: #fff;
-}
-.card__close:active,
-.card__rating button:active {
-  background: #fff;
-  color: #333;
 }
