@@ -48,16 +48,20 @@ function App() {
   return (
     <>
       <Header />
-      <div className="cards">
-        {zoo.map((item) => {
-          return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, 'animals')} decreaseLikes={() => modifyLikes(item.name, 'decrease', 'animals')} increaseLikes={() => modifyLikes(item.name, 'increase', 'animals')} />;
-        })}
-      </div>
-      <div className="cards">
-        {zoo2.map((item) => {
-          return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, 'birds')} decreaseLikes={() => modifyLikes(item.name, 'decrease', 'birds')} increaseLikes={() => modifyLikes(item.name, 'increase', 'birds')} />;
-        })}
-      </div>
+      <section className="showcase">
+        <h2 className="showcase__title">Animals</h2>
+        <div className="cards">
+          {zoo.map((item) => {
+            return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, 'animals')} decreaseLikes={() => modifyLikes(item.name, 'decrease', 'animals')} increaseLikes={() => modifyLikes(item.name, 'increase', 'animals')} />;
+          })}
+        </div>
+        <h2 className="showcase__title">Birds</h2>
+        <div className="cards">
+          {zoo2.map((item) => {
+            return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, 'birds')} decreaseLikes={() => modifyLikes(item.name, 'decrease', 'birds')} increaseLikes={() => modifyLikes(item.name, 'increase', 'birds')} />;
+          })}
+        </div>
+      </section>
       <Footer />
     </>
   );
