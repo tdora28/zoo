@@ -48,18 +48,24 @@ button {
 header,
 footer {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   height: 4rem;
   padding: 1rem;
   background: var(--clr-dark);
   color: var(--clr-white);
+}
+input#search {
+  width: 200px;
+  padding: 0.5rem 1rem;
 }
 
 /* CARDS */
 
 .showcase {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'title1 title2'
     'cards1 cards2';
