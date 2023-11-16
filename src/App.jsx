@@ -67,11 +67,11 @@ function App() {
         },
         {
           path: '/animals',
-          element: <Animals />,
+          element: <Animals dataset={zoo} search={search} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
         {
           path: '/birds',
-          element: <Birds />,
+          element: <Birds dataset={zoo2} search={search} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
       ],
     },
