@@ -1,8 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
-// import Header from './Header.jsx';
-// import Card from './Card.jsx';
-// import Footer from './Footer.jsx';
 import { animals } from './animalList.js';
 import { birds } from './animalList.js';
 

@@ -56,6 +56,19 @@ footer {
   background: var(--clr-dark);
   color: var(--clr-white);
 }
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style-type: none;
+}
+nav ul li a {
+  color: var(--clr-white);
+}
+nav ul li a.active {
+  color: #a2dded;
+}
+
 input#search {
   width: 200px;
   padding: 0.5rem 1rem;
