@@ -22,8 +22,8 @@ body {
 
   --_g: radial-gradient(#0000 60%, var(--c1) 61% 63%, #0000 64% 77%, var(--c1) 78% 80%, #0000 81%);
   --_c: , #0000 75%, var(--c2) 0;
-  background: conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * 0.44) calc(0.9 * var(--s)), conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * -0.06) calc(0.4 * var(--s)), conic-gradient(at 20% 12% var(--_c)) calc(0.9 * var(--s)) calc(var(--s) * 0.44),
-    conic-gradient(at 20% 12% var(--_c)) calc(0.4 * var(--s)) calc(var(--s) * -0.06), var(--_g), var(--_g) calc(var(--s) / 2) calc(var(--s) / 2) var(--c2);
+  background: conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * 0.44) calc(0.9 * var(--s)), conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * -0.06) calc(0.4 * var(--s)),
+    conic-gradient(at 20% 12% var(--_c)) calc(0.9 * var(--s)) calc(var(--s) * 0.44), conic-gradient(at 20% 12% var(--_c)) calc(0.4 * var(--s)) calc(var(--s) * -0.06), var(--_g), var(--_g) calc(var(--s) / 2) calc(var(--s) / 2) var(--c2);
   background-size: var(--s) var(--s);
 }
 
@@ -59,6 +59,38 @@ footer {
 input#search {
   width: 200px;
   padding: 0.5rem 1rem;
+}
+
+/* HOME */
+.home-main {
+  padding: 2rem 1rem;
+}
+
+.home-title {
+  margin-bottom: 2rem;
+  font-size: 7rem;
+  font-style: italic;
+  color: var(--clr-white);
+  text-align: center;
+}
+
+.home-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.home-card {
+  max-width: 500px;
+  filter: grayscale(1);
+  transition: all 0.1s ease-in;
+}
+.home-card:hover {
+  transform: scale(105%);
+  filter: grayscale(0);
+}
+.home-card img {
+  width: 100%;
 }
 
 /* CARDS */
@@ -176,6 +208,14 @@ input#search {
 }
 
 @media (max-width: 650px) {
+  .home-title {
+    font-size: 5rem;
+  }
+
+  .home-cards {
+    flex-direction: column;
+  }
+
   .showcase {
     display: flex;
     flex-direction: column;
