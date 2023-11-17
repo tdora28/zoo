@@ -64,11 +64,11 @@ function App() {
         },
         {
           path: '/animals',
-          element: <Animals dataset={zoo} search={search} removeCard={removeCard} modifyLikes={modifyLikes} />,
+          element: <Animals dataset={zoo} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
         {
           path: '/birds',
-          element: <Birds dataset={zoo2} search={search} removeCard={removeCard} modifyLikes={modifyLikes} />,
+          element: <Birds dataset={zoo2} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
       ],
     },
@@ -77,32 +77,6 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-
-      {/* <Header search={searchHandler} />
-      <section className='showcase'>
-        <h2 className='showcase__title'>Animals</h2>
-        <div className='cards'>
-          {zoo
-            .filter((item) => {
-              return item.name.toLowerCase().includes(search.toLowerCase());
-            })
-            .map((item) => {
-              return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, 'animals')} decreaseLikes={() => modifyLikes(item.name, 'decrease', 'animals')} increaseLikes={() => modifyLikes(item.name, 'increase', 'animals')} />;
-            })}
-        </div>
-        <h2 className='showcase__title'>Birds</h2>
-
-        <div className='cards'>
-          {zoo2
-            .filter((item) => {
-              return item.name.toLowerCase().includes(search.toLowerCase());
-            })
-            .map((item) => {
-              return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, 'birds')} decreaseLikes={() => modifyLikes(item.name, 'decrease', 'birds')} increaseLikes={() => modifyLikes(item.name, 'increase', 'birds')} />;
-            })}
-        </div>
-      </section>
-      <Footer /> */}
     </>
   );
 }

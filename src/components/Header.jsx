@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom';
 
-const Header = ({ search }) => {
+const Header = () => {
   return (
     <header>
       <p>Header</p>
-      {/* <input type="text" id="search" onChange={search} /> */}
       <nav>
         <ul>
           <li>
