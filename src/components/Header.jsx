@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
-      <p>Header</p>
+      <Link to="/" className="header-logo">
+        Zoo!
+      </Link>
       <nav>
         <ul>
           <li>
