@@ -1,27 +1,28 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { useState } from 'react';
-import { animals } from './animalList.js';
-import { birds } from './animalList.js';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useState } from "react";
+import { animals } from "./animalList.js";
+import { birds } from "./animalList.js";
 
-import Root from './routes/Root.jsx';
-import ErrorPage from './routes/ErrorPage.jsx';
-import Home from './routes/Home.jsx';
-import Animals from './routes/Animals.jsx';
-import Birds from './routes/Birds.jsx';
+import Root from "./routes/Root.jsx";
+import ErrorPage from "./routes/ErrorPage.jsx";
+import Home from "./routes/Home.jsx";
+import Animals from "./routes/Animals.jsx";
+import Birds from "./routes/Birds.jsx";
+import About from "./routes/About.jsx";
 
 function App() {
   const [zoo, setZoo] = useState(animals);
   const [zoo2, setZoo2] = useState(birds);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   const removeCard = (name, data) => {
-    const correctZoo = data === 'animals' ? zoo : zoo2;
+    const correctZoo = data === "animals" ? zoo : zoo2;
 
     const updateZoo = correctZoo.filter((item) => {
       return item.name !== name;
     });
 
-    if (data === 'animals') {
+    if (data === "animals") {
       setZoo(updateZoo);
     } else {
       setZoo2(updateZoo);
@@ -29,19 +30,19 @@ function App() {
   };
 
   const modifyLikes = (name, operation, data) => {
-    const correctZoo = data === 'animals' ? zoo : zoo2;
+    const correctZoo = data === "animals" ? zoo : zoo2;
 
     const updateZoo = correctZoo.map((item) => {
-      if (item.name === name && operation === 'increase') {
+      if (item.name === name && operation === "increase") {
         item.likes++;
       }
-      if (item.name === name && operation === 'decrease') {
+      if (item.name === name && operation === "decrease") {
         item.likes--;
       }
       return item;
     });
 
-    if (data === 'animals') {
+    if (data === "animals") {
       setZoo(updateZoo);
     } else {
       setZoo2(updateZoo);
@@ -54,21 +55,25 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Root />,
       errorElement: <ErrorPage />,
       children: [
         {
-          path: '/',
+          path: "/",
           element: <Home />,
         },
         {
-          path: '/animals',
+          path: "/animals",
           element: <Animals dataset={zoo} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
         {
-          path: '/birds',
+          path: "/birds",
           element: <Birds dataset={zoo2} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
+        },
+        {
+          path: "/about",
+          element: <About />,
         },
       ],
     },

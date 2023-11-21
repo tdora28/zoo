@@ -1,6 +1,6 @@
 :root {
-  --font-base: 'Lato', sans-serif;
-  --font-display: 'Lilita One', sans-serif;
+  --font-base: "Lato", sans-serif;
+  --font-display: "Lilita One", sans-serif;
   --clr-white: #fff;
   --clr-dark: #333;
   --clr-accent: #a2dded;
@@ -25,8 +25,8 @@ body {
 
   --_g: radial-gradient(#0000 60%, var(--c1) 61% 63%, #0000 64% 77%, var(--c1) 78% 80%, #0000 81%);
   --_c: , #0000 75%, var(--c2) 0;
-  background: conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * 0.44) calc(0.9 * var(--s)), conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * -0.06) calc(0.4 * var(--s)),
-    conic-gradient(at 20% 12% var(--_c)) calc(0.9 * var(--s)) calc(var(--s) * 0.44), conic-gradient(at 20% 12% var(--_c)) calc(0.4 * var(--s)) calc(var(--s) * -0.06), var(--_g), var(--_g) calc(var(--s) / 2) calc(var(--s) / 2) var(--c2);
+  background: conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * 0.44) calc(0.9 * var(--s)), conic-gradient(at 12% 20% var(--_c)) calc(var(--s) * -0.06) calc(0.4 * var(--s)), conic-gradient(at 20% 12% var(--_c)) calc(0.9 * var(--s)) calc(var(--s) * 0.44),
+    conic-gradient(at 20% 12% var(--_c)) calc(0.4 * var(--s)) calc(var(--s) * -0.06), var(--_g), var(--_g) calc(var(--s) / 2) calc(var(--s) / 2) var(--c2);
   background-size: var(--s) var(--s);
 }
 
@@ -120,6 +120,27 @@ footer small {
 }
 .home-card img {
   width: 100%;
+}
+
+/* ABOUT */
+.about-main {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 3rem;
+  border-radius: 10px;
+  background: var(--clr-white);
+  line-height: 1.5rem;
+}
+.about-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-align: center;
+}
+.about-subtitle {
+  margin: 2rem 0 0.5rem;
+}
+.about-list {
+  margin-left: 2rem;
 }
 
 /* CARDS */
@@ -235,8 +256,12 @@ input#search {
   .home-title {
     font-size: 5rem;
   }
-
   .home-cards {
     flex-direction: column;
+  }
+
+  .about-main {
+    margin: 2rem 1rem;
+    padding: 2rem;
   }
 }
