@@ -61,13 +61,13 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/",
       element: <Root resetSearch={resetSearch} />,
       errorElement: <ErrorPage />,
       children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
         {
           path: "/animals",
           element: <Animals dataset={zoo} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
