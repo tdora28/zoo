@@ -259,6 +259,13 @@ input#search {
   font-weight: 600;
 }
 
+/* SINGLE */
+.single-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 650px) {
   .home-title {
     font-size: 5rem;

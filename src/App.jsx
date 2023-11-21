@@ -82,11 +82,11 @@ function App() {
         },
         {
           path: "/animals/:id",
-          element: <Single />,
+          element: <Single dataset={zoo} zootype={"animals"} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
         {
           path: "/birds/:id",
-          element: <Single />,
+          element: <Single dataset={zoo2} zootype={"birds"} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
       ],
     },
