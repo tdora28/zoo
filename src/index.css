@@ -81,9 +81,16 @@ nav ul {
 }
 nav ul li a {
   color: var(--clr-white);
+  text-decoration: none;
 }
 nav ul li a.active {
   color: var(--clr-accent);
+}
+nav ul li a:hover {
+  border-bottom: 1px solid var(--clr-white);
+}
+nav ul li a.active:hover {
+  border-bottom: 1px solid var(--clr-accent);
 }
 
 footer small {
