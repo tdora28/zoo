@@ -11,7 +11,7 @@ function Animals({ dataset, search, searchHandler, removeCard, modifyLikes }) {
               return item.name.toLowerCase().includes(search.toLowerCase());
             })
             .map((item) => {
-              return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, "animals")} decreaseLikes={() => modifyLikes(item.name, "decrease", "animals")} increaseLikes={() => modifyLikes(item.name, "increase", "animals")} />;
+              return <Card key={item.name} {...item} zootype="animals" removeCard={() => removeCard(item.name, "animals")} decreaseLikes={() => modifyLikes(item.name, "decrease", "animals")} increaseLikes={() => modifyLikes(item.name, "increase", "animals")} />;
             })}
         </>
       );

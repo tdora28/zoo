@@ -1,4 +1,6 @@
-const Card = ({ name, likes, decreaseLikes, increaseLikes, removeCard }) => {
+import { Link } from "react-router-dom";
+
+const Card = ({ name, likes, zootype, decreaseLikes, increaseLikes, removeCard }) => {
   return (
     <div className="card">
       <button className="card__close" onClick={removeCard}>
@@ -14,12 +16,13 @@ const Card = ({ name, likes, decreaseLikes, increaseLikes, removeCard }) => {
             <span className="material-symbols-outlined">remove</span>
           </button>
           <p className="card__rating-score">
-            <span className="material-symbols-outlined">{likes >= 0 ? 'favorite' : 'heart_broken'}</span> <span>{likes}</span>
+            <span className="material-symbols-outlined">{likes >= 0 ? "favorite" : "heart_broken"}</span> <span>{likes}</span>
           </p>
           <button className="card__rating-btn" onClick={increaseLikes}>
             <span className="material-symbols-outlined">add</span>
           </button>
         </div>
+        <Link to={`/${zootype}/${name}`}>See more</Link>
       </div>
     </div>
   );

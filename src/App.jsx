@@ -9,6 +9,7 @@ import Home from "./routes/Home.jsx";
 import Animals from "./routes/Animals.jsx";
 import Birds from "./routes/Birds.jsx";
 import About from "./routes/About.jsx";
+import Single from "./routes/Single.jsx";
 
 function App() {
   const [zoo, setZoo] = useState(animals);
@@ -78,6 +79,14 @@ function App() {
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/animals/:id",
+          element: <Single />,
+        },
+        {
+          path: "/birds/:id",
+          element: <Single />,
         },
       ],
     },
