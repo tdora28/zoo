@@ -1,25 +1,33 @@
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ resetSearch }) => {
   return (
     <header>
-      <Link to="/" className="header-logo">
+      <Link to="/" className="header-logo" onClick={resetSearch}>
         Zoo!
       </Link>
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" onClick={resetSearch}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/animals">Animals</NavLink>
+            <NavLink to="/animals" onClick={resetSearch}>
+              Animals
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/birds">Birds</NavLink>
+            <NavLink to="/birds" onClick={resetSearch}>
+              Birds
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about" onClick={resetSearch}>
+              About
+            </NavLink>
           </li>
         </ul>
       </nav>

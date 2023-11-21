@@ -53,10 +53,14 @@ function App() {
     setSearch(e.target.value);
   };
 
+  const resetSearch = () => {
+    setSearch("");
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Root />,
+      element: <Root resetSearch={resetSearch} />,
       errorElement: <ErrorPage />,
       children: [
         {

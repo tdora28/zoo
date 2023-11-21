@@ -1,4 +1,4 @@
-import Card from '../components/Card.jsx';
+import Card from "../components/Card.jsx";
 
 function Animals({ dataset, search, searchHandler, removeCard, modifyLikes }) {
   function displayCards(length) {
@@ -10,7 +10,7 @@ function Animals({ dataset, search, searchHandler, removeCard, modifyLikes }) {
               return item.name.toLowerCase().includes(search.toLowerCase());
             })
             .map((item) => {
-              return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, 'animals')} decreaseLikes={() => modifyLikes(item.name, 'decrease', 'animals')} increaseLikes={() => modifyLikes(item.name, 'increase', 'animals')} />;
+              return <Card key={item.name} {...item} removeCard={() => removeCard(item.name, "animals")} decreaseLikes={() => modifyLikes(item.name, "decrease", "animals")} increaseLikes={() => modifyLikes(item.name, "increase", "animals")} />;
             })}
         </>
       );
@@ -21,7 +21,7 @@ function Animals({ dataset, search, searchHandler, removeCard, modifyLikes }) {
 
   return (
     <section className="cards-wrap" placeholder="Search...">
-      <input type="text" id="search" onChange={searchHandler} />
+      <input type="text" id="search" onChange={searchHandler} placeholder="Search..." />
       <div className="cards">{displayCards(dataset.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())).length)}</div>
     </section>
   );
