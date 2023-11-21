@@ -1,8 +1,17 @@
-# React + Vite
+# React Zoo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+A project assignment for the React Basics class (REACT2023S) at Business College Helsinki. It utilizes important React concepts and tools such as:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- function components
+- import and modules
+- destructuring
+- Array.map
+- React Router
+
+The starter kit is Vite.
+
+## Functionality
+
+Select a Zoo category on the home page to see several instances. You can delete the instances and also give the like points.
