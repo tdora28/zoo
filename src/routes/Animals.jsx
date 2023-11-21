@@ -1,4 +1,5 @@
 import Card from "../components/Card.jsx";
+import SearchBar from "../components/SearchBar.jsx";
 
 function Animals({ dataset, search, searchHandler, removeCard, modifyLikes }) {
   function displayCards(length) {
@@ -21,7 +22,7 @@ function Animals({ dataset, search, searchHandler, removeCard, modifyLikes }) {
 
   return (
     <section className="cards-wrap" placeholder="Search...">
-      <input type="text" id="search" onChange={searchHandler} placeholder="Search..." />
+      <SearchBar searchHandler={searchHandler} />
       <div className="cards">{displayCards(dataset.filter((item) => item.name.toLowerCase().includes(search.toLowerCase())).length)}</div>
     </section>
   );
