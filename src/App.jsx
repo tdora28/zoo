@@ -5,7 +5,7 @@ import { animals, birds } from "./animalList.js";
 import Root from "./routes/Root.jsx";
 import Home from "./routes/Home.jsx";
 import CategoryPage from "./routes/CategoryPage.jsx";
-import Single from "./routes/Single.jsx";
+import SinglePage from "./routes/SinglePage.jsx";
 import About from "./routes/About.jsx";
 import ErrorPage from "./routes/ErrorPage.jsx";
 
@@ -62,7 +62,7 @@ function App() {
         },
         {
           path: ":category/:name",
-          element: <Single dataset={zoo} zootype={"animals"} removeCard={removeCard} modifyLikes={modifyLikes} />,
+          element: <SinglePage zoo={zoo} />,
         },
         {
           path: "/about",
