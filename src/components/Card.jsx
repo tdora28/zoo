@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Card = ({ name, likes, zootype, decreaseLikes, increaseLikes, removeCard }) => {
+const Card = ({ name, likes, category, decreaseLikes, increaseLikes, removeCard }) => {
   return (
     <div className="card">
       <button className="card__close" onClick={removeCard}>
@@ -22,7 +22,7 @@ const Card = ({ name, likes, zootype, decreaseLikes, increaseLikes, removeCard }
             <span className="material-symbols-outlined">add</span>
           </button>
         </div>
-        <Link to={`/${zootype}/${name}`}>See more</Link>
+        <Link to={`/${category}/${name}`}>See more</Link>
       </div>
     </div>
   );

@@ -1,53 +1,41 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useState } from "react";
-import { animals } from "./animalList.js";
-import { birds } from "./animalList.js";
+import { animals, birds } from "./animalList.js";
 
 import Root from "./routes/Root.jsx";
-import ErrorPage from "./routes/ErrorPage.jsx";
 import Home from "./routes/Home.jsx";
-import Animals from "./routes/Animals.jsx";
-import Birds from "./routes/Birds.jsx";
-import About from "./routes/About.jsx";
+import CategoryPage from "./routes/CategoryPage.jsx";
 import Single from "./routes/Single.jsx";
+import About from "./routes/About.jsx";
+import ErrorPage from "./routes/ErrorPage.jsx";
 
 function App() {
-  const [zoo, setZoo] = useState(animals);
-  const [zoo2, setZoo2] = useState(birds);
+  const [zoo, setZoo] = useState({
+    animals: animals,
+    birds: birds,
+  });
   const [search, setSearch] = useState("");
 
-  const removeCard = (name, data) => {
-    const correctZoo = data === "animals" ? zoo : zoo2;
-
-    const updateZoo = correctZoo.filter((item) => {
-      return item.name !== name;
+  const removeCard = (name, category) => {
+    const updatedArr = zoo[category].filter((el) => {
+      return el.name !== name;
     });
-
-    if (data === "animals") {
-      setZoo(updateZoo);
-    } else {
-      setZoo2(updateZoo);
-    }
+    setZoo({ ...zoo, [category]: updatedArr });
   };
 
-  const modifyLikes = (name, operation, data) => {
-    const correctZoo = data === "animals" ? zoo : zoo2;
-
-    const updateZoo = correctZoo.map((item) => {
-      if (item.name === name && operation === "increase") {
-        item.likes++;
+  const modifyLikes = (name, operation, category) => {
+    const updatedArr = zoo[category].map((el) => {
+      if (el.name === name) {
+        if (operation === "increase") {
+          return { ...el, likes: el.likes + 1 };
+        } else {
+          return { ...el, likes: el.likes - 1 };
+        }
+      } else {
+        return el;
       }
-      if (item.name === name && operation === "decrease") {
-        item.likes--;
-      }
-      return item;
     });
-
-    if (data === "animals") {
-      setZoo(updateZoo);
-    } else {
-      setZoo2(updateZoo);
-    }
+    setZoo({ ...zoo, [category]: updatedArr });
   };
 
   const searchHandler = (e) => {
@@ -69,24 +57,16 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         {
-          path: "/animals",
-          element: <Animals dataset={zoo} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
+          path: ":category",
+          element: <CategoryPage zoo={zoo} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
         {
-          path: "/birds",
-          element: <Birds dataset={zoo2} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
+          path: ":category/:name",
+          element: <Single dataset={zoo} zootype={"animals"} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
         {
           path: "/about",
           element: <About />,
-        },
-        {
-          path: "/animals/:id",
-          element: <Single dataset={zoo} zootype={"animals"} removeCard={removeCard} modifyLikes={modifyLikes} />,
-        },
-        {
-          path: "/birds/:id",
-          element: <Single dataset={zoo2} zootype={"birds"} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
       ],
     },
