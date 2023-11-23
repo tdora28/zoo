@@ -290,8 +290,36 @@ input#search {
 /* SINGLE */
 .single-main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  color: var(--clr-white);
+}
+.single-image {
+  max-width: 100%;
+  border: 15px solid var(--clr-white);
+  border-radius: 20px;
+}
+.single-title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.single-button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-align: center;
+  text-decoration: none;
+}
+.single-button:hover {
+  background: var(--clr-dark);
+  color: var(--clr-white);
 }
 
 /* ABOUT */
