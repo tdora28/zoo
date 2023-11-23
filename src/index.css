@@ -1,6 +1,6 @@
 :root {
-  --font-base: "Lato", sans-serif;
-  --font-display: "Lilita One", sans-serif;
+  --font-base: 'Lato', sans-serif;
+  --font-display: 'Lilita One', sans-serif;
   --clr-white: #fff;
   --clr-dark: #333;
   --clr-accent: #a2dded;
@@ -75,6 +75,7 @@ nav ul li a {
 }
 nav ul li a.active {
   color: var(--clr-accent);
+  text-decoration: underline;
 }
 nav ul li a:hover {
   border-bottom: 1px solid var(--clr-white);
@@ -107,10 +108,10 @@ footer small {
   transition: all 0.1s ease-in;
 }
 .home-card--animals {
-  background-image: url("https://source.unsplash.com/800x800/?fox");
+  background-image: url('https://source.unsplash.com/800x800/?fox');
 }
 .home-card--birds {
-  background-image: url("https://source.unsplash.com/800x800/?bird");
+  background-image: url('https://source.unsplash.com/800x800/?bird');
 }
 .home-card:hover {
   transform: scale(98%);
