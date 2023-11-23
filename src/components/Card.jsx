@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Card = ({ name, likes, category, decreaseLikes, increaseLikes, removeCard }) => {
   return (
@@ -16,13 +16,15 @@ const Card = ({ name, likes, category, decreaseLikes, increaseLikes, removeCard 
             <span className="material-symbols-outlined">remove</span>
           </button>
           <p className="card__rating-score">
-            <span className="material-symbols-outlined">{likes >= 0 ? "favorite" : "heart_broken"}</span> <span>{likes}</span>
+            <span className="material-symbols-outlined">{likes >= 0 ? 'favorite' : 'heart_broken'}</span> <span>{likes}</span>
           </p>
           <button className="card__rating-btn" onClick={increaseLikes}>
             <span className="material-symbols-outlined">add</span>
           </button>
         </div>
-        <Link to={`/${category}/${name}`}>See more</Link>
+        <Link className="card__see-more" to={`/${category}/${name}`}>
+          See more
+        </Link>
       </div>
     </div>
   );
