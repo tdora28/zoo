@@ -101,7 +101,7 @@ footer small {
 .home-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 50vh;
+  grid-auto-rows: calc(50vh - 1rem);
   gap: 0.5rem;
   align-content: center;
   min-height: 100vh;
@@ -121,6 +121,12 @@ footer small {
 }
 .home-card--birds {
   background-image: url('https://source.unsplash.com/800x800/?bird');
+}
+.home-card--insects {
+  background-image: url('https://source.unsplash.com/800x800/?butterfly');
+}
+.home-card--fish {
+  background-image: url('https://source.unsplash.com/800x800/?fish');
 }
 .home-card:hover {
   transform: scale(98%);
