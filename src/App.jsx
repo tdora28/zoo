@@ -44,10 +44,6 @@ function App() {
     setSearch(e.target.value);
   };
 
-  const resetSearch = () => {
-    setSearch('');
-  };
-
   const router = createBrowserRouter([
     {
       path: '/',
@@ -55,7 +51,7 @@ function App() {
     },
     {
       path: '/',
-      element: <Root resetSearch={resetSearch} />,
+      element: <Root />,
       errorElement: <ErrorPage />,
       children: [
         {
