@@ -196,6 +196,11 @@ input#search {
   border-radius: 20px;
   background: var(--clr-white);
   box-shadow: 0 0 0 0.3rem var(--clr-white);
+  transition: transform 0.1s ease-in;
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 0 0.3rem var(--clr-white), 0 0 1rem var(--clr-white);
 }
 .card__close {
   position: absolute;
