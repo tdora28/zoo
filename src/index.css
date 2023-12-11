@@ -109,11 +109,11 @@ footer small {
 .home-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: calc(50vh - 1rem);
+  grid-auto-rows: calc(50vh - 4rem);
   gap: 0.5rem;
   align-content: center;
   min-height: 100vh;
-  padding: 0.5rem;
+  padding: 2rem;
 }
 .home-card {
   position: relative;
