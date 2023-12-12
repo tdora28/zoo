@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from "react-router-dom";
 
 function Single({ zoo }) {
   const navigate = useNavigate();
@@ -8,8 +8,6 @@ function Single({ zoo }) {
   const item = zoo[category].find((el) => {
     return el.name === name;
   });
-
-  // console.log(item);
 
   return (
     <main className="single-main">
