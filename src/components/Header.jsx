@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-
-import { useState, useEffect } from 'react';
+import { Link, NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -11,9 +9,9 @@ const Header = () => {
     const updateWidth = () => {
       setScreenWidth(window.innerWidth);
     };
-    window.addEventListener('resize', updateWidth);
+    window.addEventListener("resize", updateWidth);
     return () => {
-      window.removeEventListener('resize', updateWidth);
+      window.removeEventListener("resize", updateWidth);
     };
   }, [screenWidth]);
 
@@ -35,7 +33,7 @@ const Header = () => {
         <button className="header-menu-btn" onClick={toggleNav}>
           <span className="material-symbols-outlined">menu</span>
         </button>
-        <nav className={`${isMobileNavOpen ? 'open-nav' : ''}`}>
+        <nav className={`${isMobileNavOpen ? "open-nav" : ""}`}>
           <ul>
             <li>
               <NavLink to="/" onClick={toggleNav}>
