@@ -11,7 +11,7 @@ function Single({ zoo }) {
 
   return (
     <main className="single-main">
-      <img className="single-image" src={`https://source.unsplash.com/400x400/?${item.name}`} alt={`unsplash image of ${item.name}`} />
+      <img className="single-image" src={`https://source.unsplash.com/400x400/?${item.name}`} alt={`${item.name}`} />
       <h2 className="single-title">{item.name}</h2>
       <p className="single-likes">Likes: {item.likes}</p>
       <button className="single-button" onClick={() => navigate(-1)}>
