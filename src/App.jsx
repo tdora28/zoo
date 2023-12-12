@@ -1,13 +1,13 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { useState } from 'react';
-import { animals, birds, insects, fish } from './animalList.js';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useState } from "react";
+import { animals, birds, insects, fish } from "./animalList.js";
 
-import Root from './routes/Root.jsx';
-import Home from './routes/Home.jsx';
-import CategoryPage from './routes/CategoryPage.jsx';
-import SinglePage from './routes/SinglePage.jsx';
-import About from './routes/About.jsx';
-import ErrorPage from './routes/ErrorPage.jsx';
+import Root from "./routes/Root.jsx";
+import Home from "./routes/Home.jsx";
+import CategoryPage from "./routes/CategoryPage.jsx";
+import SinglePage from "./routes/SinglePage.jsx";
+import About from "./routes/About.jsx";
+import ErrorPage from "./routes/ErrorPage.jsx";
 
 function App() {
   const [zoo, setZoo] = useState({
@@ -16,7 +16,7 @@ function App() {
     insects: insects,
     fish: fish,
   });
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   const removeCard = (name, category) => {
     const updatedArr = zoo[category].filter((el) => {
@@ -28,7 +28,7 @@ function App() {
   const modifyLikes = (name, operation, category) => {
     const updatedArr = zoo[category].map((el) => {
       if (el.name === name) {
-        if (operation === 'increase') {
+        if (operation === "increase") {
           return { ...el, likes: el.likes + 1 };
         } else {
           return { ...el, likes: el.likes - 1 };
@@ -46,35 +46,31 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Home />,
     },
     {
-      path: '/',
+      path: "/",
       element: <Root />,
       errorElement: <ErrorPage />,
       children: [
         {
-          path: ':category',
+          path: ":category",
           element: <CategoryPage zoo={zoo} search={search} searchHandler={searchHandler} removeCard={removeCard} modifyLikes={modifyLikes} />,
         },
         {
-          path: ':category/:name',
+          path: ":category/:name",
           element: <SinglePage zoo={zoo} />,
         },
         {
-          path: '/about',
+          path: "/about",
           element: <About />,
         },
       ],
     },
   ]);
 
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
