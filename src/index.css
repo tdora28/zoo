@@ -171,6 +171,24 @@ footer small {
   color: var(--clr-white);
   text-transform: capitalize;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--clr-white);
+  color: var(--clr-dark);
+}
+.back-to-top:hover {
+  background: var(--clr-accent);
+  transform: scale(1.1);
+}
 
 /* SEARCH */
 input#search {
