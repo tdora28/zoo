@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 
 import Card from "../components/Card.jsx";
 import SearchBar from "../components/SearchBar.jsx";
-import BackToTop from "../components/BackToTop.jsx";
 
 function CategoryPage(props) {
   let urlParams = useParams();
@@ -35,7 +34,6 @@ function CategoryPage(props) {
       <section className="cards-wrap">
         <div className="cards">{displayCards(props.zoo[category].filter((el) => el.name.toLowerCase().includes(props.search.toLowerCase())).length)}</div>
       </section>
-      <BackToTop />
     </>
   );
 }
