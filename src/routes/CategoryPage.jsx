@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
-import Card from '../components/Card.jsx';
-import SearchBar from '../components/SearchBar.jsx';
+import Card from "../components/Card.jsx";
+import SearchBar from "../components/SearchBar.jsx";
 
 function CategoryPage(props) {
   let urlParams = useParams();
@@ -16,21 +16,12 @@ function CategoryPage(props) {
               return el.name.toLowerCase().includes(props.search.toLowerCase());
             })
             .map((el) => {
-              return (
-                <Card
-                  key={el.name}
-                  {...el}
-                  category={category}
-                  removeCard={() => props.removeCard(el.name, category)}
-                  decreaseLikes={() => props.modifyLikes(el.name, 'decrease', category)}
-                  increaseLikes={() => props.modifyLikes(el.name, 'increase', category)}
-                />
-              );
+              return <Card key={el.name} {...el} category={category} removeCard={() => props.removeCard(el.name, category)} decreaseLikes={() => props.modifyLikes(el.name, "decrease", category)} increaseLikes={() => props.modifyLikes(el.name, "increase", category)} />;
             })}
         </>
       );
     } else {
-      return <p className="card__error">No Animals Found!</p>;
+      return <p className="card__error">No Result!</p>;
     }
   }
 
