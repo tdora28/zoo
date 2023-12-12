@@ -1,6 +1,6 @@
 :root {
-  --font-base: 'Lato', sans-serif;
-  --font-display: 'Lilita One', sans-serif;
+  --font-base: "Lato", sans-serif;
+  --font-display: "Lilita One", sans-serif;
   --clr-white: #fff;
   --clr-dark: #333;
   --clr-accent: #a2dded;
@@ -125,16 +125,16 @@ footer small {
   transition: all 0.1s ease-in;
 }
 .home-card--animals {
-  background-image: url('https://source.unsplash.com/800x800/?fox');
+  background-image: url("https://source.unsplash.com/800x800/?fox");
 }
 .home-card--birds {
-  background-image: url('https://source.unsplash.com/800x800/?bird');
+  background-image: url("https://source.unsplash.com/800x800/?bird");
 }
 .home-card--insects {
-  background-image: url('https://source.unsplash.com/800x800/?butterfly');
+  background-image: url("https://source.unsplash.com/800x800/?butterfly");
 }
 .home-card--fish {
-  background-image: url('https://source.unsplash.com/800x800/?fish');
+  background-image: url("https://source.unsplash.com/800x800/?fish");
 }
 .home-card:hover {
   transform: scale(98%);
@@ -178,7 +178,6 @@ input#search {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 10px;
-  text-align: right;
 }
 
 /* CARDS */
